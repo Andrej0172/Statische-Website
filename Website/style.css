@@ -330,3 +330,89 @@ main.page {
         width: 100%;
     }
 }
+
+:root {
+    --neon-pink: #ff3cac;
+    --neon-purple: #784ba0;
+    --neon-blue: #2b86c5;
+    --accent: #00ffff;
+}
+
+#banner {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.75)
+    );
+    z-index: 1;
+}
+
+#banner .content {
+    position: absolute;
+    z-index: 2;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 900px;
+}
+
+#banner h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(
+        90deg,
+        var(--neon-pink),
+        var(--neon-purple),
+        var(--neon-blue)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#banner .subtitle {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+}
+
+main article h2 {
+    color: var(--neon-purple);
+    border-left: 4px solid var(--neon-pink);
+    padding-left: 0.6rem;
+}
+
+main article h3 {
+    color: var(--neon-blue);
+}
+
+a {
+    color: var(--neon-blue);
+}
+
+a:hover {
+    color: var(--neon-pink);
+}
+
+main aside ol li a:hover {
+    background: linear-gradient() 90deg;
+}
