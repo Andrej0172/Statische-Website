@@ -109,7 +109,6 @@ header #banner div.content {
     background-color: rgba(255, 255, 255, 0.5333333333);
 }
 
-/* Klein: zorg dat je content niet achter de fixed navbar valt */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -117,39 +116,13 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 1rem; /* netter */
-    scroll-margin-top: 4rem; /* voor ankers */
-}
-
-@media screen and (max-width: 1200px) {
-    main {
-        max-width: 992px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    main {
-        max-width: 768px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    main {
-        max-width: 640px;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    main {
-        max-width: 100%;
-    }
+    gap: 1rem;
 }
 
 main aside {
     width: 30%;
 }
 
-/* Jij gebruikt <ol> in de aside, dus die stylen we ook */
 main aside ol {
     list-style: none;
     margin: 0;
@@ -168,17 +141,7 @@ main aside ol li > a:hover {
 }
 
 main article {
-    scroll-margin-top: 2rem;
     width: 70%;
-}
-
-/* nettere typografie in article */
-main article section {
-    margin-bottom: 1.25rem;
-}
-
-main article p {
-    margin: 0.75rem 0;
 }
 
 main article #intro {
@@ -192,18 +155,17 @@ footer {
     padding: 1rem;
 }
 
-/* --- Gallery: minimaal netter + figure support --- */
+/* Gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin: 1rem 0;
-    align-items: stretch;
 }
 
 .gallery-item {
-    margin: 0; /* figure heeft standaard margin, die halen we weg */
-    width: 350px; /* zodat ze netjes gelijk zijn */
+    margin: 0;
+    width: 350px;
     max-width: 100%;
 }
 
@@ -216,4 +178,100 @@ footer {
 .gallery-item figcaption {
     font-size: 0.9em;
     margin-top: 0.4rem;
+}
+
+/* --- FAQ pagina (minimaal) --- */
+.page-banner {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+main.page {
+    padding-top: 1rem;
+}
+
+.info-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem;
+}
+
+/* FAQ items (uitklapbaar) */
+.faq-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    background: #f9f9f9;
+}
+
+.faq-item summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.2rem;
+}
+
+.faq-item[open] summary::after {
+    content: "–";
+}
+
+.faq-item p {
+    margin-top: 0.5rem;
+}
+
+/* Formulier */
+.vraag-formulier {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.vraag-formulier label {
+    font-weight: 600;
+}
+
+.vraag-formulier input,
+.vraag-formulier textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.vraag-formulier input:focus,
+.vraag-formulier textarea:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.cta {
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    background: #000;
+    color: #fff;
+    border: 1px solid #888;
+    transition: transform 0.08s ease-in-out;
+}
+
+.cta:hover {
+    transform: translateY(-1px);
 }
