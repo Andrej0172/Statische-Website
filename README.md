@@ -1,0 +1,2 @@
+# Statische-Website
+eerste commit.
